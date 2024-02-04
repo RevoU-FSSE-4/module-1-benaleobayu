@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Brandingku</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            position: sticky;
+            width: 100%;
+            top: 0%;
+            background-color: black;
+        }
+        header {
+            width: 100%;
+            height: 25em;
+            background-color: yellow;
+
+            & section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                font-size: 2rem;
+
+                & p {
+                    padding: 1rem 2rem;
+                }
+
+                & strong {
+                    margin: 0 0.25rem;
+                }
+            }
+        }
+        main section{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        footer{
+            /*position: absolute;*/
+            bottom: 0%;
+            width: 100%;
+            background-color: whitesmoke;
+        }
+        .nav{
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+
+                & a {
+                    text-decoration: none;
+                    color: white;
+                    margin-right: 1rem;
+                }
+
+                & a:hover {
+                    color: yellow;
+                    font-weight: bold;
+                }
+        }
+        .title-content {
+            width: 100%;
+            text-align: center;
+            padding: 1rem 0;
+            background-color: ghostwhite;
+            & > p {
+                font-weight: bold;
+            }
+        }
+        .main-content{
+            width: 100%;
+            max-width: 760px;
+            text-align: center;
+            padding: 2rem 0;
+
+            & p {
+                padding: 1rem 2rem;
+            }
+        }
+        .foo-content{
+            width: 100%;
+            text-align: center;
+            padding: 1rem 2rem 0 2rem ;
+        }
+        .foo-form {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 2rem 2rem 2rem;
+
+            & form{
+                width: 100%;
+                max-width: 760px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0 10px;
+                background-color: white;
+                padding: 0.5rem 1rem;
+
+                & button {
+                    padding: 0.5rem 1rem;
+                    border-radius: 5px;
+                    background-color: blue;
+                    color: white;
+                }
+            }
+        }
+        .form-section{
+            display: flex;
+            flex-direction: column;
+            margin: 0.5rem 0;
+            & > label {
+                font-weight: bold;
+            }
+            & input, textarea {
+                border: 1px solid black;
+                border-radius: 2px;
+            }
+
+        }
+    </style>
+    <link rel="icon"
+          href="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/a32f81155cd0d4f16d36aef74f7d2644.png">
+</head>
+<body>
+<nav>
+    <div class="nav">
+        <a href="#home">Brandingku</a>
+        <div class="nav-menu">
+
+            <span><a href="#home">Home</a></span>
+            <span><a href="#about">About</a></span>
+            <span><a href="#contact">Contact</a></span>
+        </div>
+    </div>
+</nav>
+<header id="home">
+    <section>
+        <p>
+            Get free merchandise from <strong>Brandingku</strong>
+        </p>
+    </section>
+</header>
+<main>
+    <section>
+        <div class="title-content" id="about">
+            <p>About</p>
+        </div>
+        <div class="main-content">
+            <p>
+                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
+            </p>
+            <p>
+                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
+            </p>
+            <p>
+                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
+            </p>
+        </div>
+    </section>
+</main>
+<footer>
+    <section>
+        <div class="title-content" id="contact">
+            <p>Contact Us</p>
+        </div>
+        <div class="foo-content">
+            <p>Do you have any questions for us?</p>
+            <p>You can send some questions by filling out the form below.</p>
+        </div>
+        <div class="foo-form">
+            <form action="#">
+                <div class="form-section" style="width: calc(50% - 5px)">
+                    <label for="nama">Name</label>
+                    <input type="text" name="nama" id="nama" style="padding: 0.25rem 0">
+                </div>
+                <div class="form-section" style="width: calc(50% - 5px)">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" style="padding: 0.25rem 0">
+                </div>
+                <div class="form-section" style="width: 100%">
+                    <label>Gender</label>
+                    <div>
+                        <input type="radio" name="gender" id="male">
+                        <label for="male">Male</label>
+                        <input type="radio" name="gender" id="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="form-section" style="width: 100%">
+                    <label for="address">Address</label>
+                    <textarea name="address" id="address" cols="30" rows="5"></textarea>
+                </div>
+                <button>Send</button>
+            </form>
+        </div>
+    </section>
+</footer>
+</body>
+</html>
