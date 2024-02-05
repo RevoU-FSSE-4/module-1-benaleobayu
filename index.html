@@ -9,6 +9,9 @@
             margin: 0;
             padding: 0;
         }
+        body{
+            overflow-x: hidden;
+        }
 
         nav {
             position: sticky;
@@ -16,6 +19,7 @@
             top: 0%;
             background-color: black;
         }
+
         header {
             width: 100%;
             height: 25em;
@@ -37,43 +41,81 @@
                 }
             }
         }
-        main section{
+
+        main section {
             display: flex;
             align-items: center;
             flex-direction: column;
         }
-        footer{
+
+        footer {
             /*position: absolute;*/
             bottom: 0%;
             width: 100%;
             background-color: whitesmoke;
         }
-        .nav{
+
+        .nav {
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
 
+            & a {
+                text-decoration: none;
+                color: white;
+                margin-right: 1rem;
+            }
+            & a:hover {
+                color: yellow;
+                font-weight: bold;
+            }
+        }
+        .nav-menu{
+            & span:nth-child(4){
+                display: none;
+            }
+        }
+
+        aside {
+            position: fixed;
+            right: 0%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+
+            & .menu {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                & span {
+                    padding: 0.7rem 2rem;
+                }
                 & a {
                     text-decoration: none;
                     color: white;
-                    margin-right: 1rem;
                 }
-
                 & a:hover {
                     color: yellow;
                     font-weight: bold;
                 }
+            }
         }
+        .hidden{
+            display: none;
+        }
+
         .title-content {
             width: 100%;
             text-align: center;
             padding: 1rem 0;
             background-color: ghostwhite;
+
             & > p {
                 font-weight: bold;
             }
         }
-        .main-content{
+
+        .main-content {
             width: 100%;
             max-width: 760px;
             text-align: center;
@@ -83,17 +125,39 @@
                 padding: 1rem 2rem;
             }
         }
-        .foo-content{
+        .categories{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 1rem;
+            & img {
+                width: calc((100vw / 6) - 2%);
+                min-width: 100px;
+                cursor: pointer;
+                border-radius: 50%;
+                transition: 500ms ease-in-out;
+            }
+            & img:hover {
+                box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.75);
+                transform: translate(0,-20px);
+
+                /*-webkit-box-shadow: 0px 0px 49px 20px rgba(0,0,0,0.75);*/
+                /*-moz-box-shadow: 0px 0px 49px 20px rgba(0,0,0,0.75);*/
+            }
+        }
+
+        .foo-content {
             width: 100%;
             text-align: center;
-            padding: 1rem 2rem 0 2rem ;
+            padding: 1rem 2rem 0 2rem;
         }
+
         .foo-form {
             display: flex;
             justify-content: center;
             padding: 1rem 2rem 2rem 2rem;
 
-            & form{
+            & form {
                 width: 100%;
                 max-width: 760px;
                 display: flex;
@@ -110,18 +174,35 @@
                 }
             }
         }
-        .form-section{
+
+        .form-section {
             display: flex;
             flex-direction: column;
             margin: 0.5rem 0;
+
             & > label {
                 font-weight: bold;
             }
+
             & input, textarea {
                 border: 1px solid black;
                 border-radius: 2px;
             }
 
+        }
+        @media only screen and (max-width: 550px){
+            aside {
+                width: 100%;
+                max-width: 200px;
+            }
+            .nav-menu {
+                & span:nth-child(1), span:nth-child(2), span:nth-child(3){
+                    display: none;
+                }
+                & span:nth-child(4){
+                    display: block;
+                }
+            }
         }
     </style>
     <link rel="icon"
@@ -132,35 +213,59 @@
     <div class="nav">
         <a href="#home">Brandingku</a>
         <div class="nav-menu">
-
             <span><a href="#home">Home</a></span>
             <span><a href="#about">About</a></span>
             <span><a href="#contact">Contact</a></span>
+            <span>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 15px; vertical-align: middle"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                </a>
+            </span>
         </div>
     </div>
-</nav>
-<header id="home">
     <section>
+        <aside class="hidden">
+            <div class="menu">
+                <span><a href="#home">Home</a></span>
+                <span><a href="#about">About</a></span>
+                <span><a href="#contact">Contact</a></span>
+            </div>
+        </aside>
+    </section>
+</nav>
+<header>
+    <section id="home">
         <p>
             Get free merchandise from <strong>Brandingku</strong>
         </p>
     </section>
 </header>
 <main>
-    <section>
-        <div class="title-content" id="about">
+    <section id="categories">
+        <div class="title-content" >
+            <p>Category</p>
+        </div>
+        <div class="categories">
+            <img src="assets/images/categories/tumbler.png" alt="souvenir tumbler">
+            <img src="assets/images/categories/mug.png" alt="souvenir mug">
+            <img src="assets/images/categories/usb.png" alt="souvenir usb">
+            <img src="assets/images/categories/powerbank.png" alt="souvenir powerbank">
+            <img src="assets/images/categories/atk.png" alt="souvenir alat tulis">
+            <img src="assets/images/categories/umbrella.png" alt="souvenir umbrella">
+        </div>
+    </section>
+    <section id="about">
+        <div class="title-content" >
             <p>About</p>
         </div>
         <div class="main-content">
             <p>
-                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
+                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan
+                dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk
+                memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan
+                barang-barang istimewa yang akan membuatmu tampil beda!
             </p>
-            <p>
-                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
-            </p>
-            <p>
-                Dapatkan souvenir atau merchandise eksklusif di toko Brandingku! Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
-            </p>
+
         </div>
     </section>
 </main>
@@ -201,5 +306,13 @@
         </div>
     </section>
 </footer>
+
+<script>
+    const menu = document.querySelector('.nav-menu span:nth-child(4)')
+    menu.addEventListener('click', () => {
+        const aside = document.querySelector('aside');
+        aside.classList.toggle('hidden');
+    })
+</script>
 </body>
 </html>
