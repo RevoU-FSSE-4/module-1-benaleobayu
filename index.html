@@ -95,11 +95,10 @@
                 & a {
                     text-decoration: none;
                     color: white;
-                }
-
-                & a:hover {
-                    color: yellow;
-                    font-weight: bold;
+                    &:hover {
+                        color: yellow;
+                        font-weight: bold;
+                    }
                 }
             }
         }
@@ -215,15 +214,15 @@
             position: fixed;
             left: 50%;
             top: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             background-color: ghostwhite;
             width: 500px;
             height: 200px;
             margin-left: -250px;
             margin-top: -100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             border-radius: 15px;
             box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.75);
         }
@@ -234,8 +233,6 @@
             padding: 10px 15px;
             border: none;
             cursor: pointer;
-
-
         }
 
         @media only screen and (max-width: 550px) {
@@ -332,18 +329,18 @@
             <p>You can send some questions by filling out the form below.</p>
         </div>
         <div class="foo-form">
-            <form action="#">
+            <form id="contactUs">
                 <div class="form-section" style="width: calc(50% - 5px)">
                     <label for="nama">Name</label>
-                    <input type="text" name="nama" id="nama" >
+                    <input type="text" name="nama" id="nama" required />
                 </div>
                 <div class="form-section" style="width: calc(50% - 5px)">
                     <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone">
+                    <input type="number" name="phone" id="phone">
                 </div>
                 <div class="form-section" style="width: 100%">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" >
+                    <input type="email" name="email" id="email" required />
                 </div>
 
                 <div class="form-section" style="width: 100%">
@@ -359,7 +356,7 @@
                     <label for="address">Address</label>
                     <textarea name="address" id="address" cols="30" rows="5"></textarea>
                 </div>
-                <a id="submitBtn">Send</a>
+                <button type="submit" id="submitBtn">Send</button>
             </form>
         </div>
     </section>
@@ -381,24 +378,24 @@
 </section>
 
 <script>
+    // use to toggle the sidebar
     const menu = document.querySelector('.nav-menu span a[data-view="hamburger"]')
     const alertBox = document.getElementById('alert');
     menu.addEventListener('click', () => {
         const aside = document.querySelector('aside');
         aside.classList.toggle('hidden');
     })
-
-    const buttonSubmit = document.getElementById('submitBtn');
-    buttonSubmit.addEventListener('click', () => {
-        alertBox.classList.add('show-alert')
+    // use to open popup alert notification after success submit form
+    const formSubmit = document.getElementById('contactUs');
+    formSubmit.addEventListener('submit', (e) => {
+        alertBox.classList.add('show-alert');
+        e.preventDefault();
     })
-
+    // close popup alert notification
     const buttonClose = document.getElementById('closeBtn');
     buttonClose.addEventListener('click', () => {
         alertBox.removeAttribute('class')
     })
-
-
 </script>
 </body>
 </html>
