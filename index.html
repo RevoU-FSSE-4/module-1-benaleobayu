@@ -49,8 +49,6 @@
         }
 
         footer {
-            /*position: absolute;*/
-            bottom: 0%;
             width: 100%;
             background-color: whitesmoke;
         }
@@ -71,7 +69,7 @@
             }
         }
         .nav-menu{
-            & span:nth-child(4){
+            & span a[data-view="hamburger"]{
                 display: none;
             }
         }
@@ -141,9 +139,6 @@
             & img:hover {
                 box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.75);
                 transform: translate(0,-20px);
-
-                /*-webkit-box-shadow: 0px 0px 49px 20px rgba(0,0,0,0.75);*/
-                /*-moz-box-shadow: 0px 0px 49px 20px rgba(0,0,0,0.75);*/
             }
         }
 
@@ -197,11 +192,11 @@
                 max-width: 200px;
             }
             .nav-menu {
-                & span:nth-child(1), span:nth-child(2), span:nth-child(3){
+                & span a{
                     display: none;
                 }
-                & span:nth-child(4){
-                    display: block;
+                & span a[data-view="hamburger"]{
+                    display: block !important;
                 }
             }
         }
@@ -215,11 +210,11 @@
         <a href="#home">Brandingku</a>
         <div class="nav-menu">
             <span><a href="#home">Home</a></span>
-            <span><a href="#categories">About</a></span>
+            <span><a href="#categories">Categories</a></span>
             <span><a href="#about">About</a></span>
             <span><a href="#contact">Contact</a></span>
             <span>
-                <a href="#">
+                <a href="#" data-view="hamburger">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 15px; vertical-align: middle"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
                 </a>
             </span>
@@ -229,7 +224,7 @@
         <aside class="hidden">
             <div class="menu">
                 <span><a href="#home">Home</a></span>
-                <span><a href="#categories">About</a></span>
+                <span><a href="#categories">Categories</a></span>
                 <span><a href="#about">About</a></span>
                 <span><a href="#contact">Contact</a></span>
             </div>
@@ -307,7 +302,7 @@
 </footer>
 
 <script>
-    const menu = document.querySelector('.nav-menu span:nth-child(4)')
+    const menu = document.querySelector('.nav-menu span a[data-view="hamburger"]')
     menu.addEventListener('click', () => {
         const aside = document.querySelector('aside');
         aside.classList.toggle('hidden');
