@@ -154,6 +154,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: calc((100vw / 6) - 2%);
+            min-width: 80px;
+            max-width: 150px;
         }
 
         #foo {
@@ -220,7 +223,8 @@
             left: 50%;
             top: -50%;
             background-color: ghostwhite;
-            width: 500px;
+            width: 80%;
+            max-width: 500px;
             height: 200px;
             margin-left: -250px;
             margin-top: -100px;
@@ -258,6 +262,10 @@
                 & span a[data-view="hamburger"] {
                     display: block !important;
                 }
+            }
+
+            .alert{
+                margin-left: -40% !important;
             }
         }
     </style>
