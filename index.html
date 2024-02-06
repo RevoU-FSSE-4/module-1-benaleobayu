@@ -9,7 +9,8 @@
             margin: 0;
             padding: 0;
         }
-        body{
+
+        body {
             overflow-x: hidden;
         }
 
@@ -63,13 +64,15 @@
                 color: white;
                 margin-right: 1rem;
             }
+
             & a:hover {
                 color: yellow;
                 font-weight: bold;
             }
         }
-        .nav-menu{
-            & span a[data-view="hamburger"]{
+
+        .nav-menu {
+            & span a[data-view="hamburger"] {
                 display: none;
             }
         }
@@ -88,17 +91,20 @@
                 & span {
                     padding: 0.7rem 2rem;
                 }
+
                 & a {
                     text-decoration: none;
                     color: white;
                 }
+
                 & a:hover {
                     color: yellow;
                     font-weight: bold;
                 }
             }
         }
-        .hidden{
+
+        .hidden {
             display: none;
         }
 
@@ -123,11 +129,13 @@
                 padding: 1rem 2rem;
             }
         }
-        .categories{
+
+        .categories {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             padding: 1rem;
+
             & img {
                 width: calc((100vw / 6) - 2%);
                 min-width: 80px;
@@ -136,11 +144,13 @@
                 border-radius: 50%;
                 transition: 500ms ease-in-out;
             }
+
             & img:hover {
-                box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.75);
-                transform: translate(0,-20px);
+                box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.75);
+                transform: translate(0, -20px);
             }
         }
+
         #foo {
             display: flex;
             flex-direction: column;
@@ -151,6 +161,7 @@
             width: 100%;
             max-width: 560px;
             text-align: center;
+            margin-top: 1rem;;
         }
 
         .foo-form {
@@ -167,11 +178,12 @@
                 background-color: white;
                 padding: 0.5rem 1rem;
 
-                & button {
+                & > a {
                     padding: 0.5rem 1rem;
                     border-radius: 5px;
                     background-color: blue;
                     color: white;
+                    cursor: pointer;
                 }
             }
         }
@@ -185,22 +197,59 @@
                 font-weight: bold;
             }
 
-            & input, textarea {
+            & input,select, textarea {
                 border: 1px solid black;
                 border-radius: 2px;
+                padding: 0.5rem !important;
             }
 
         }
-        @media only screen and (max-width: 550px){
+        #alert{
+            opacity: 0;
+            transition: opacity 500ms ease-in-out 0s;
+        }
+        .show-alert{
+            opacity: 1 !important;
+        }
+        .alert {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: ghostwhite;
+            width: 500px;
+            height: 200px;
+            margin-left: -250px;
+            margin-top: -100px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.75);
+        }
+        button.close{
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+
+
+        }
+
+        @media only screen and (max-width: 550px) {
             aside {
                 width: 100%;
                 max-width: 200px;
             }
+
             .nav-menu {
-                & span a{
+                & span a {
                     display: none;
                 }
-                & span a[data-view="hamburger"]{
+
+                & span a[data-view="hamburger"] {
                     display: block !important;
                 }
             }
@@ -220,7 +269,9 @@
             <span><a href="#contact">Contact</a></span>
             <span>
                 <a href="#" data-view="hamburger">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 15px; vertical-align: middle"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 15px; vertical-align: middle">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                    </svg>
                 </a>
             </span>
         </div>
@@ -245,7 +296,7 @@
 </header>
 <main>
     <section id="categories">
-        <div class="title-content" >
+        <div class="title-content">
             <p>Category</p>
         </div>
         <div class="categories">
@@ -258,13 +309,16 @@
         </div>
     </section>
     <section id="about">
-        <div class="title-content" >
+        <div class="title-content">
             <p>About</p>
         </div>
         <div class="main-content">
             <p>
-                Dapatkan souvenir atau merchandise eksklusif di toko <strong>Brandingku!</strong>. Buatlah kesan yang tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!</p>
-
+                Dapatkan souvenir atau merchandise eksklusif di toko <strong>Brandingku!</strong>. Buatlah kesan yang
+                tak terlupakan dengan produk berkualitas tinggi yang dirancang khusus untukmu. Jangan lewatkan
+                kesempatan ini untuk memiliki koleksi unik yang akan memperkuat identitasmu. Segera kunjungi toko
+                Brandingku dan temukan barang-barang istimewa yang akan membuatmu tampil beda!
+            </p>
         </div>
     </section>
 </main>
@@ -281,12 +335,17 @@
             <form action="#">
                 <div class="form-section" style="width: calc(50% - 5px)">
                     <label for="nama">Name</label>
-                    <input type="text" name="nama" id="nama" style="padding: 0.25rem 0">
+                    <input type="text" name="nama" id="nama" >
                 </div>
                 <div class="form-section" style="width: calc(50% - 5px)">
                     <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" style="padding: 0.25rem 0">
+                    <input type="text" name="phone" id="phone">
                 </div>
+                <div class="form-section" style="width: 100%">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" >
+                </div>
+
                 <div class="form-section" style="width: 100%">
                     <label>Gender</label>
                     <div>
@@ -300,18 +359,46 @@
                     <label for="address">Address</label>
                     <textarea name="address" id="address" cols="30" rows="5"></textarea>
                 </div>
-                <button>Send</button>
+                <a id="submitBtn">Send</a>
             </form>
         </div>
     </section>
 </footer>
+<!-- Display while submit -->
+<section id="alert">
+    <div class="alert">
+        <div class="alert-title" style="margin-bottom: 20px">
+            <h2>Thanks !</h2>
+        </div>
+        <div class="alert-body" style="padding: 1rem 2rem; text-align: center">
+            <p>
+                Your question has been recorded. Please wait a moment to admin reply your question.
+            </p>
+        </div>
+        <button id="closeBtn" class="close">x</button>
+
+    </div>
+</section>
 
 <script>
     const menu = document.querySelector('.nav-menu span a[data-view="hamburger"]')
+    const alertBox = document.getElementById('alert');
     menu.addEventListener('click', () => {
         const aside = document.querySelector('aside');
         aside.classList.toggle('hidden');
     })
+
+    const buttonSubmit = document.getElementById('submitBtn');
+    buttonSubmit.addEventListener('click', () => {
+        alertBox.classList.add('show-alert')
+    })
+
+    const buttonClose = document.getElementById('closeBtn');
+    buttonClose.addEventListener('click', () => {
+        alertBox.removeAttribute('class')
+    })
+
+
 </script>
 </body>
 </html>
