@@ -80,6 +80,7 @@
         aside {
             position: fixed;
             right: 0%;
+            top: calc(0% + 50px);
             height: 100vh;
             background: rgba(0, 0, 0, 0.7);
 
@@ -149,6 +150,11 @@
                 transform: translate(0, -20px);
             }
         }
+        .flex-col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         #foo {
             display: flex;
@@ -177,7 +183,7 @@
                 background-color: white;
                 padding: 0.5rem 1rem;
 
-                & > a {
+                & > button {
                     padding: 0.5rem 1rem;
                     border-radius: 5px;
                     background-color: blue;
@@ -204,16 +210,15 @@
 
         }
         #alert{
-            opacity: 0;
-            transition: opacity 500ms ease-in-out 0s;
         }
         .show-alert{
             opacity: 1 !important;
+            top: 50% !important;
         }
         .alert {
             position: fixed;
             left: 50%;
-            top: 50%;
+            top: -50%;
             background-color: ghostwhite;
             width: 500px;
             height: 200px;
@@ -225,6 +230,10 @@
             justify-content: center;
             border-radius: 15px;
             box-shadow: 0px 0px 50px 5px rgba(0, 0, 0, 0.75);
+            opacity: 0;
+            transition:
+                    top 1s ease,
+                    opacity 1500ms ease-in-out;
         }
         button.close{
             position: absolute;
@@ -265,7 +274,7 @@
             <span><a href="#about">About</a></span>
             <span><a href="#contact">Contact</a></span>
             <span>
-                <a href="#" data-view="hamburger">
+                <a data-view="hamburger">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" style="width: 15px; vertical-align: middle">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                     </svg>
@@ -297,12 +306,30 @@
             <p>Category</p>
         </div>
         <div class="categories">
-            <img src="assets/images/categories/tumbler.png" alt="souvenir tumbler">
-            <img src="assets/images/categories/mug.png" alt="souvenir mug">
-            <img src="assets/images/categories/usb.png" alt="souvenir usb">
-            <img src="assets/images/categories/powerbank.png" alt="souvenir powerbank">
-            <img src="assets/images/categories/atk.png" alt="souvenir alat tulis">
-            <img src="assets/images/categories/umbrella.png" alt="souvenir umbrella">
+            <div class="flex-col">
+                <img src="assets/images/categories/tumbler.png" alt="souvenir tumbler">
+                <p>Tumbler</p>
+            </div>
+            <div class="flex-col">
+                <img src="assets/images/categories/mug.png" alt="souvenir mug">
+                <p>Mug</p>
+            </div>
+            <div class="flex-col">
+                <img src="assets/images/categories/usb.png" alt="souvenir usb">
+                <p>USB</p>
+            </div>
+            <div class="flex-col">
+                <img src="assets/images/categories/powerbank.png" alt="souvenir powerbank">
+                <p>Powerbank</p>
+            </div>
+            <div class="flex-col">
+                <img src="assets/images/categories/atk.png" alt="souvenir alat tulis">
+                <p>ATK</p>
+            </div>
+            <div class="flex-col">
+                <img src="assets/images/categories/umbrella.png" alt="souvenir umbrella">
+                <p>Umbrella</p>
+            </div>
         </div>
     </section>
     <section id="about">
@@ -380,7 +407,7 @@
 <script>
     // use to toggle the sidebar
     const menu = document.querySelector('.nav-menu span a[data-view="hamburger"]')
-    const alertBox = document.getElementById('alert');
+    const alertChild = document.querySelector('#alert div.alert');
     menu.addEventListener('click', () => {
         const aside = document.querySelector('aside');
         aside.classList.toggle('hidden');
@@ -388,13 +415,13 @@
     // use to open popup alert notification after success submit form
     const formSubmit = document.getElementById('contactUs');
     formSubmit.addEventListener('submit', (e) => {
-        alertBox.classList.add('show-alert');
+        alertChild.classList.add('show-alert');
         e.preventDefault();
     })
     // close popup alert notification
     const buttonClose = document.getElementById('closeBtn');
     buttonClose.addEventListener('click', () => {
-        alertBox.removeAttribute('class')
+        alertChild.classList.remove('show-alert');
     })
 </script>
 </body>
