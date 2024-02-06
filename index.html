@@ -14,7 +14,7 @@
         }
 
         nav {
-            position: sticky;
+            position: sticky !important;
             width: 100%;
             top: 0%;
             background-color: black;
@@ -141,11 +141,16 @@
                 transform: translate(0,-20px);
             }
         }
+        #foo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
         .foo-content {
             width: 100%;
+            max-width: 560px;
             text-align: center;
-            padding: 1rem 2rem 0 2rem;
         }
 
         .foo-form {
@@ -264,7 +269,7 @@
     </section>
 </main>
 <footer>
-    <section>
+    <section id="foo">
         <div class="title-content" id="contact">
             <p>Contact Us</p>
         </div>
