@@ -1,9 +1,3 @@
-<style>
-img[alt="image"] {
-max-height:  500px;
-display: block;
-}
-</style>
 # Assignment 
 ## Module 1 - Checkpoint #1
 
