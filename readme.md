@@ -1,4 +1,3 @@
-# Assignment 
 ## Module 1 - Checkpoint #1
 
 This is for assignment module 1 FSSE Class of Jan 2024, Web Development Essentials.
@@ -21,8 +20,10 @@ _- You will see hamburger icon at the top-right in below 550px width resolution_
 
 _- If you click the hamburger icon, you will see sidebar with all menu_
 
+#### 2. Grid Layouts on Products
+_- In this page on section products has styling with grid responsive_
 
-#### 2. Animate transition popup
+#### 3. Animate transition popup
 ![image](./assets/images/readme/form_popup.png)
 _- If you click the submit button, you will see alert notification_
 
