@@ -63,7 +63,7 @@
             & a {
                 text-decoration: none;
                 color: white;
-                margin-right: 1rem;
+                padding: 0 1rem;
             }
 
             & a:hover {
@@ -114,10 +114,8 @@
             text-align: center;
             padding: 1rem 0;
             background-color: ghostwhite;
+            font-weight: bold;
 
-            & > p {
-                font-weight: bold;
-            }
         }
 
         .main-content {
@@ -155,9 +153,9 @@
         .product{
             display: grid;
             grid-gap: 10px;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: calc((100%/3) - 6.6px) calc((100%/3) - 6.6px) calc((100%/3) - 6.6px);
             margin: 2rem 0;
-            padding: 0 1rem;
+            padding: 0 10px;
 
             & > .list-product {
                 display: grid;
@@ -338,10 +336,10 @@
     <section>
         <aside class="hidden">
             <div class="menu">
-                <span><a href="#home">Home</a></span>
-                <span><a href="#categories">Categories</a></span>
-                <span><a href="#about">About</a></span>
-                <span><a href="#contact">Contact</a></span>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
             </div>
         </aside>
     </section>
@@ -356,7 +354,7 @@
 <main>
     <section id="categories">
         <div class="title-content">
-            <p>Category</p>
+            Category
         </div>
         <div class="categories">
             <div class="flex-col">
@@ -387,33 +385,33 @@
     </section>
     <section id="products">
         <div class="title-content">
-            <p>Our Products</p>
+            Our Products
         </div>
         <div class="product">
             <div class="list-product">
                 <picture>
-                    <source media="(min-width: 550px)" srcset="./assets/images/products/vivo.png" sizes="250">
+                    <source media="(min-width: 550px)" srcset="./assets/images/products/vivo.png">
                     <img src="./assets/images/products/unavailable.png" alt="image unavailable">
                 </picture>
                 <h3><strong>Vivo</strong></h3>
             </div>
             <div class="list-product">
                 <picture>
-                    <source media="(min-width: 550px)" srcset="./assets/images/products/subway.png" sizes="250">
+                    <source media="(min-width: 550px)" srcset="./assets/images/products/subway.png">
                     <img src="./assets/images/products/unavailable.png" alt="image unavailable">
                 </picture>
                 <h3><strong>Subway</strong></h3>
             </div>
             <div class="list-product">
                 <picture>
-                    <source media="(min-width: 550px)" srcset="./assets/images/products/jupiter.png" sizes="250">
+                    <source media="(min-width: 550px)" srcset="./assets/images/products/jupiter.png">
                     <img src="./assets/images/products/unavailable.png" alt="image unavailable">
                 </picture>
                 <h3><strong>Jupiter</strong></h3>
             </div>
             <div class="list-product">
                 <picture>
-                    <source media="(min-width: 550px)" srcset="./assets/images/products/taka.png" sizes="250">
+                    <source media="(min-width: 550px)" srcset="./assets/images/products/taka.png">
                     <img src="./assets/images/products/unavailable.png" alt="image unavailable">
                 </picture>
                 <h3><strong>Taka</strong></h3>
@@ -422,7 +420,7 @@
     </section>
     <section id="about">
         <div class="title-content">
-            <p>About</p>
+            About
         </div>
         <div class="main-content">
             <p>
@@ -437,7 +435,7 @@
 <footer>
     <section id="foo">
         <div class="title-content" id="contact">
-            <p>Contact Us</p>
+            Contact Us
         </div>
         <div class="foo-content">
             <p>Do you have any questions for us?</p>
