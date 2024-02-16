@@ -1,5 +1,5 @@
 // use to toggle the sidebar
-const menu = document.querySelector('.nav-menu span a[data-view="hamburger"]')
+const menu = document.querySelector('a[data-view="hamburger"]')
 const alertChild = document.querySelector('#alert div.alert');
 menu.addEventListener('click', () => {
     const aside = document.querySelector('aside');
